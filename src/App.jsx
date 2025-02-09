@@ -17,7 +17,11 @@ function App() {
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   });
 
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const storedTodos = localStorage.getItem("todos");
+    return storedTodos ? JSON.parse(storedTodos) : [];
+  });
+
   const [selectedDate, setSelectedDate] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [authStatus, setAuthStatus] = useState({
@@ -28,19 +32,6 @@ function App() {
 
   const calendarWidgetRef = useRef(null);
 
-  // Carrega tarefas salvas do localStorage na inicialização
-  useEffect(() => {
-    const storedTodos = localStorage.getItem("todos");
-    if (storedTodos) {
-      setTodos(JSON.parse(storedTodos));
-    }
-  }, []);
-
-  // Salva as tarefas no localStorage sempre que "todos" mudar
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
-
   useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
@@ -48,6 +39,11 @@ function App() {
       document.documentElement.classList.remove('dark');
     }
   }, [theme]);
+
+  useEffect(() => {
+    console.log("Salvando tarefas no localStorage:", todos);
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const handleAddTodo = async (todoData) => {
     const newTodo = {
