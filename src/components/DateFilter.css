@@ -1,0 +1,16 @@
+.date-filter {
+  @apply flex items-center justify-center gap-4 mb-6;
+}
+
+.date-filter input {
+  @apply p-2 border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+}
+
+.date-filter button {
+  @apply px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600
+         transition-all duration-200;
+}
+
+.date-filter button:hover {
+  @apply transform scale-105;
+} 

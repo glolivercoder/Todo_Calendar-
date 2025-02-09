@@ -1,0 +1,35 @@
+.todo-list {
+  @apply space-y-4;
+}
+
+.todo-item {
+  @apply p-4 rounded-md shadow-md flex items-center gap-4 transition-all duration-200;
+}
+
+.todo-item:hover {
+  @apply transform -translate-y-1;
+}
+
+.todo-item input[type="checkbox"] {
+  @apply w-5 h-5 rounded-full;
+}
+
+.todo-item.priority-high {
+  @apply border-l-4 border-red-500 bg-red-50 dark:bg-red-900/20;
+}
+
+.todo-item.priority-medium {
+  @apply border-l-4 border-yellow-500 bg-yellow-50 dark:bg-yellow-900/20;
+}
+
+.todo-item.priority-low {
+  @apply border-l-4 border-green-500 bg-green-50 dark:bg-green-900/20;
+}
+
+.completed {
+  @apply line-through text-gray-500;
+}
+
+.date-time {
+  @apply text-sm text-gray-600 dark:text-gray-300;
+} 

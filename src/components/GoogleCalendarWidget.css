@@ -1,0 +1,48 @@
+.calendar-widget {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-6 overflow-hidden;
+}
+
+.calendar-widget-warning {
+  @apply bg-yellow-100 dark:bg-yellow-900 p-4 rounded-lg mb-4 text-yellow-800 dark:text-yellow-200;
+}
+
+.calendar-widget-header {
+  @apply p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700
+         flex justify-between items-center border-b dark:border-gray-700;
+}
+
+.calendar-widget-content {
+  @apply p-4 overflow-hidden;
+}
+
+.calendar-date-picker {
+  @apply flex justify-center;
+}
+
+.calendar-date-picker input {
+  @apply bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600
+         rounded-md p-2 focus:ring-2 focus:ring-blue-500 dark:text-white;
+}
+
+.calendar-event {
+  @apply p-3 bg-gray-50 dark:bg-gray-700 rounded-lg
+         transition-all duration-200 border-l-4 border-blue-500;
+}
+
+.calendar-event:hover {
+  @apply shadow-md;
+}
+
+.calendar-event .time-indicator {
+  @apply text-sm text-blue-500 font-medium;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+} 

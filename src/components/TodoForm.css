@@ -1,0 +1,18 @@
+.todo-form {
+  @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg space-y-4 mb-8;
+}
+
+.todo-form input,
+.todo-form select {
+  @apply p-2 border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+}
+
+.todo-form button {
+  @apply px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-md 
+         hover:from-blue-600 hover:to-purple-700 dark:from-purple-600 dark:to-blue-500
+         transition-all duration-200;
+}
+
+.todo-form button:hover {
+  @apply transform scale-105;
+} 
